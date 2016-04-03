@@ -5,9 +5,7 @@ A `localStorage`-like wrapper around React Native's `AsyncStorage` with cache ex
 
 100% inspired by @pamelafox's [lscache](https://github.com/pamelafox/lscache). Currently being used by my project, [hackerweb-ios](https://github.com/cheeaun/hackerweb-ios).
 
-**WARNING**: The tests are not working yet.
-
-**TODO**: Fix the bloody tests not working 😩
+**WARNING**: The test coverage is not very high 😅
 
 Installation
 ---
