@@ -1,6 +1,6 @@
 {
   "name": "react-native-cache-store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A localStorage-like wrapper around React Native's AsyncStorage with cache expiration.",
   "keywords": [
     "react-native",
