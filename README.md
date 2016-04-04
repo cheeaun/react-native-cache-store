@@ -1,4 +1,4 @@
-React Native Cache Store ![npm version](https://img.shields.io/npm/v/react-native-cache-store.svg?style=flat)
+React Native Cache Store [![npm version](https://img.shields.io/npm/v/react-native-cache-store.svg?style=flat)](https://www.npmjs.com/package/react-native-cache-store)
 ===
 
 A `localStorage`-like wrapper around React Native's `AsyncStorage` with cache expiration.
