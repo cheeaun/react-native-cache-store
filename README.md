@@ -1,4 +1,4 @@
-React Native Cache Store
+React Native Cache Store ![npm version](https://img.shields.io/npm/v/react-native-cache-store.svg?style=flat)
 ===
 
 A `localStorage`-like wrapper around React Native's `AsyncStorage` with cache expiration.
@@ -11,45 +11,35 @@ Installation
 ---
 
 ```
-npm i react-native-cache-store
+npm i --save react-native-cache-store
 ```
 
 API Reference
 ---
 
-`set` - Stores the value. Expires after specified number of **minutes**.
+- `set(key, value, [time])` - Stores the value. Expires after specified number of **minutes**.
 
-1. `key` (string)
-2. `value` (Object | string)
-3. `time` (number: optional)
+  1. `key` (string)
+  2. `value` (Object | string)
+  3. `time` (number: optional)
 
----
+- `get(key)` - Retrieves specified value, if not expired.
 
-`get` - Retrieves specified value, if not expired.
+  1. `key` (string)
 
-1. `key` (string)
+- `remove(key)` - Removes a value.
 
----
+  1. `key` (string)
 
-`remove` - Removes a value.
+- `isExpired(key)` - Checks if a value has expired.
 
-1. `key` (string)
+  1. `key` (string)
 
----
+- `flush()` - Removes all items.
 
-`isExpired` - Checks if a value has expired.
+- `flushExpired()` - Removes all **expired** items. This method runs every time this code is initalized.
 
-1. `key` (string)
-
----
-
-`flush` - Removes all items.
-
----
-
-`flushExpired` - Removes all **expired** items.
-
-Simple Example Usage
+Example Usage
 ---
 
 ``` js
@@ -57,8 +47,19 @@ import CacheStore from 'react-native-cache-store';
 
 CacheStore.set('key', 'value', 10); // Expires in 10 minutes
 
-CacheStore.get('key');
+CacheStore.get('key').then((value) => {
+  // Do something with value
+});
+
+CacheStore.isExpired('key')
+  .then(() => {/* true */ })
+  .catch(() => {/* false */})
 ```
+
+Contribute
+---
+
+Of course, contributions welcomed! 🙌
 
 License
 ---
