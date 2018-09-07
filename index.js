@@ -19,10 +19,13 @@ const CacheStore = {
     return AsyncStorage.getItem(exprKey).then((expiry) => {
       if (expiry && currentTime() >= parseInt(expiry, 10)){
         AsyncStorage.multiRemove([exprKey, theKey]);
-        return new Promise.reject(null);
+        return Promise.reject(null);
       }
       return AsyncStorage.getItem(theKey).then((item) => {
-        return Promise.resolve(JSON.parse(item));
+        if (item) {
+          return Promise.resolve(JSON.parse(item));
+        }
+        return Promise.reject(null);
       });
     });
   },
@@ -48,7 +51,7 @@ const CacheStore = {
     const exprKey = CACHE_EXPIRATION_PREFIX + key;
     return AsyncStorage.getItem(exprKey).then((expiry) => {
       var expired = expiry && currentTime() >= parseInt(expiry, 10);
-      return expired ? Promise.resolve() : new Promise.reject(null);
+      return expired ? Promise.resolve() : Promise.reject(null);
     });
   },
 
