@@ -23,7 +23,11 @@ const CacheStore = {
       }
       return AsyncStorage.getItem(theKey).then((item) => {
         return Promise.resolve(JSON.parse(item));
+      }).catch(() => {
+        return new Promise.reject(null);
       });
+    }).catch(() => {
+      return new Promise.reject(null);
     });
   },
 
