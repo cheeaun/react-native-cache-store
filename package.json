@@ -25,6 +25,24 @@
     "test": "jest",
     "clear-jest-cache": "rm -rf ./node_modules/jest-cli/.haste_cache"
   },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": [
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/fbjs"
+    ],
+    "globals": {
+      "__DEV__": true
+    },
+    "verbose": true
+  },
   "devDependencies": {
     "babel-jest": "~10.0.1",
     "jest": "^23.6.0",
