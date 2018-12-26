@@ -26,10 +26,10 @@
     "clear-jest-cache": "rm -rf ./node_modules/jest-cli/.haste_cache"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testFileExtensions": [
-      "js"
-    ],
+    "collectCoverage": true,
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    },
     "moduleFileExtensions": [
       "js",
       "json"
