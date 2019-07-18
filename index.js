@@ -1,6 +1,6 @@
 'use strict';
 
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 // Inspired by lscache https://github.com/pamelafox/lscache
 
