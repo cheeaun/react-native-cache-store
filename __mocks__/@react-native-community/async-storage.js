@@ -1,6 +1,3 @@
-const React = require('react');
-const ReactNative = React;
-
 // Some code here is inspired by https://github.com/lelandrichardson/react-native-mock/
 
 function wrap(value){
@@ -62,6 +59,4 @@ const AsyncStorage = {
   },
 };
 
-ReactNative.AsyncStorage = AsyncStorage;
-
-module.exports = ReactNative;
+export default AsyncStorage;
